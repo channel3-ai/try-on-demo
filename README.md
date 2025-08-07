@@ -6,7 +6,7 @@ A minimal Next.js app that lets users search products via Channel3, capture a we
 
 - Product search using `channel3-sdk`
 - In-browser camera capture
-- Try-on generation via Glam AI (async polling supported)
+- Try-on generation via Glam AI
 - Image upload to Cloudflare Images
 - Deployable to Cloudflare Workers with OpenNext
 
