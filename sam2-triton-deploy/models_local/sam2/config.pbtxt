@@ -1,0 +1,36 @@
+name: "sam2"
+backend: "python"
+max_batch_size: 16
+
+input: [
+  {
+    name: "image_b64"
+    data_type: TYPE_STRING
+    dims: [1]
+  },
+  {
+    name: "prompt_json"
+    data_type: TYPE_STRING
+    dims: [1]
+  }
+]
+
+output: [
+  {
+    name: "result_json"
+    data_type: TYPE_STRING
+    dims: [1]
+  }
+]
+
+dynamic_batching {
+  preferred_batch_size: [4, 8]
+  max_queue_delay_microseconds: 100000
+}
+
+instance_group [{
+  kind: KIND_CPU
+  count: 2
+}]
+
+
